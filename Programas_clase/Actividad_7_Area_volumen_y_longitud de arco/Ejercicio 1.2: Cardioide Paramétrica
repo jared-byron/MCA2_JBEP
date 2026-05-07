@@ -1,0 +1,34 @@
+# Area Volumen y longitud de Arco 
+# Actividad 7
+# Profesores: Roberto Mendez y Antonio Romero 
+# Fecha de entrega: 6 mayo 2026
+# Materia: Matematicas para las Ciencias Aplicadas II 
+# Alumno: Escobar Perez Jared Byron
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0, 2*np.pi, 300)
+a = 1 
+
+
+x = a * (2*np.cos(t) - np.cos(2*t))
+y = a * (2*np.sin(t) - np.sin(2*t))
+
+
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, 'g-', linewidth=2, label='Cardioide')
+
+
+plt.fill_between(x[:150], y[:150], 0, color='lightgreen', alpha=0.5, label='Área entre curva y eje x')
+
+plt.title('Ejercicio 1.2: Gráfica de la Cardioide')
+plt.xlabel('x(t)')
+plt.ylabel('y(t)')
+plt.axhline(0, color='black', linewidth=1)
+plt.axvline(0, color='black', linewidth=1)
+plt.axis('equal') 
+plt.legend()
+plt.grid(True, linestyle='--')
+
+plt.show()
